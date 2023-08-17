@@ -165,9 +165,6 @@ def Circuit_list_2D(
     coupling_gate = gate_coupling**(phi)
     for i in range(1, sq-1, 2):
         for j in range(1,sq-1,2):
-            # u_cycle.append(cirq.Moment(coupling_gate.on(qubits[i], qubits[sq*(i+1) + j])))
-            # u_cycle.append(cirq.Moment(coupling_gate.on(qubits[i], qubits[sq*(i+1) + j+1])))
-            # u_cycle.append(cirq.Moment(coupling_gate.on(qubits[i], qubits[sq*i + j+1])))
             u_cycle.append(cirq.Moment(coupling_gate.on(qubits[i][j], qubits[i+1][j])))   
             u_cycle.append(cirq.Moment(coupling_gate.on(qubits[i][j], qubits[i][j+1])))
             u_cycle.append(cirq.Moment(coupling_gate.on(qubits[i][j], qubits[i][j-1])))
@@ -179,9 +176,6 @@ def Circuit_list_2D(
             u_cycle.append(cirq.Moment(coupling_gate.on(qubits[i][j], qubits[i-1][j+1])))
     for i in range(2, sq-1, 2):
         for j in range(2,sq-1,2):
-            # u_cycle.append(cirq.Moment(coupling_gate.on(qubits[i], qubits[sq*(i+1) + j])))
-            # u_cycle.append(cirq.Moment(coupling_gate.on(qubits[i], qubits[sq*(i+1) + j+1])))
-            # u_cycle.append(cirq.Moment(coupling_gate.on(qubits[i], qubits[sq*i + j+1])))
             u_cycle.append(cirq.Moment(coupling_gate.on(qubits[i][j], qubits[i+1][j])))   
             u_cycle.append(cirq.Moment(coupling_gate.on(qubits[i][j], qubits[i][j+1])))
             u_cycle.append(cirq.Moment(coupling_gate.on(qubits[i][j], qubits[i][j-1])))
